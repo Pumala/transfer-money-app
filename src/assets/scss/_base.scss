@@ -1,0 +1,33 @@
+body, html {
+    margin: 0;
+    height: 100%;
+    font-family: Thasadith, sans-serif;
+}
+ul {
+    margin: 0;
+    padding: 0;
+    li {
+        list-style: none;
+    }
+}
+textarea {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.clearfix {
+    overflow: auto;
+}
+
+button {
+    outline: none;
+}
+
+input {
+    box-sizing: border-box;
+    outline: none;
+}
+
+div, section {
+    box-sizing: border-box;
+}

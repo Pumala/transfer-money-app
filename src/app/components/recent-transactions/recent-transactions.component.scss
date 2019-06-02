@@ -1,0 +1,125 @@
+@import '../../../assets/scss/styles.scss';
+
+.recent-transactions {
+    background-color: #fff;
+    .title {
+        @include titleWrapper;
+        img {
+            @include titleIcon;
+        }
+        h2 {
+            @include title;
+        }
+    }
+    .contents-wrapper {
+        padding: 15px;
+        table {
+            background-color: #fff;
+            width: 100%;
+            margin-top: 10px;
+            border-collapse: collapse;
+            tr {
+                border: 1px solid grey;
+                border-left-width: 5px;
+                &.orange {
+                    border-left-color: #ff9800;
+                }
+                &.blue {
+                    border-left-color: blue;
+                }
+                &.green {
+                    border-left-color: green;
+                }
+                &.none {
+                    border: none;
+                }
+                td {
+                    padding: 8px;
+                    &.date {
+                        min-width: 40px;
+                        span {
+                            font-size: 12px;
+                        }
+                    }
+                    &.img {
+                        img {
+                            height: 30px;
+                            width: 30px;
+                            margin-top: 5px;
+                        }
+                    }
+                    &.merchant {
+                        div {
+                            margin-left: 10px;
+                            h4 {
+                                margin: 0;
+                                font-size: 14px;
+                            }
+                            p {
+                                margin: 0;
+                                font-size: 12px;
+                            }
+                        }
+                    }
+                    &.amount {
+                        min-width: 60px;
+                        span {
+                            font-weight: bold;
+                            font-size: 12px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .recent-transactions {
+        display: inline-block;
+        width: 100%;
+        .title {
+            h2 {
+                font-size: 18px;
+            }
+        }
+        .contents-wrapper {
+            table {
+                tr {
+                    td {
+                        &.date {
+                            min-width: 47px;
+                            span {
+                                font-size: 16px;
+                            }
+                        }
+                        &.img {
+                            img {
+                                height: 50px;
+                                width: 50px;
+                            }
+                        }
+                        &.merchant {
+                            div {
+                                h4 {
+                                    margin: 0;
+                                    font-size: 16px;
+                                }
+                                p {
+                                    margin: 0;
+                                    font-size: 14px;
+                                }
+                            }
+                        }
+                        &.amount {
+                            min-width: 80px;
+                            span {
+                                font-size: 16px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

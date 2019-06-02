@@ -1,0 +1,34 @@
+<div class="recent-transactions">
+    <div class="title">
+        <img src="../../../assets/icons/suitcase.png" alt="">
+        <h2>Recent Transactions</h2>
+    </div>
+    <div class="contents-wrapper">
+        <app-filter-search (sortDirectionEvent)="receiveSortDirection($event)" (searchKeywordsEvent)="receiveSearchKeywords($event)"
+            (clearSearchAndResetEvent)="clearSearchAndReset($event)"></app-filter-search>
+        <table>
+            <tbody>
+                <tr *ngFor="let transaction of transactions | transactionsFilterAndSort : searchKeywords : sortBy : direction " [ngClass]="getBorderColor(transaction)">
+                    <td *ngIf="transaction === -1">
+                        <p>No results.</p>
+                    </td>
+                    <td *ngIf="transaction !== -1" class="date">
+                        <span>{{ transaction.transactionDate | date: 'MMM d' }}</span>
+                    </td>
+                    <td *ngIf="transaction !== -1" class="img">
+                        <img [src]="transaction.merchantLogo" onError="this.src='assets/icons/default-icon.png';" alt="merchant logo">
+                    </td>
+                    <td *ngIf="transaction !== -1" class="merchant">
+                        <div>
+                            <h4>{{ transaction.merchant }}</h4>
+                            <p>{{ transaction.transactionType }}</p>
+                        </div>
+                    </td>
+                    <td *ngIf="transaction !== -1" class="amount">
+                        <span>- ${{ transaction.amount }}</span>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

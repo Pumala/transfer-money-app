@@ -1,0 +1,8 @@
+<app-header></app-header>
+<section id="transfer-money">
+    <div class="wrapper">
+        <app-transfer-form class="app-transfer-form" (makeTransferEvent)="addNewTransfer($event)" (clearSearchAndResetEvent)="clearSearchAndReset($event)"
+            [balance]="updatedBalance"></app-transfer-form>
+        <app-recent-transactions-dashboard class="app-recent-transactions-dashboard" [transactions]="updatedTransactions"></app-recent-transactions-dashboard>
+    </div>
+</section>

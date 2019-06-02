@@ -1,0 +1,37 @@
+<div class="filter-functionality">
+    <div>
+        <input name="search" type="text" placeholder="Search by typing..." [(ngModel)]="searchKeywords" (ngModelChange)="updateSearchKeywords($event)">
+        <img *ngIf="searchKeywords && searchKeywords.length > 0" (click)="clearSearchAndReset()" class="cancel-button" src="../../../assets/icons/cancel.png" alt="cancel reset search button">
+    </div>
+    <p>Sort By</p>
+    <div class="buttons-wrapper">
+
+        <div name="date" class="button" [ngClass]="checkIfActive('transactionDate')" (click)="changeSortAndDirection('transactionDate', sortDirectionTracker.transactionDate )">
+            <div>
+                <p>
+                    Date
+                    <span [ngClass]="updateArrowDirection('transactionDate')"></span>
+                </p>
+            </div>
+        </div>
+
+        <div name="beneficiary" class="button" [ngClass]="checkIfActive('merchant')" (click)="changeSortAndDirection('merchant', sortDirectionTracker.merchant )">
+            <div>
+                <p>
+                    Beneficiary
+                    <span [ngClass]="updateArrowDirection('merchant')"></span>
+                </p>
+            </div>
+
+        </div>
+        <div name="amount" class="button" [ngClass]="checkIfActive('amount')" (click)="changeSortAndDirection('amount', sortDirectionTracker.amount )">
+            <div>
+                <p>
+                    Amount
+                    <span [ngClass]="updateArrowDirection('amount')"></span>
+                </p>
+            </div>
+
+        </div>
+    </div>
+</div>

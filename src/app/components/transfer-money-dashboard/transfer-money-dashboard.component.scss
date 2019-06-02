@@ -1,0 +1,40 @@
+#transfer-money {
+    background-image: url('../../../assets/img/background.jpg');
+    background-position: center;
+    background-size: cover;
+    // min-height: calc(100% - 78px);
+    height: initial;
+    min-height: initial;
+}
+
+@media screen and (min-width: 768px) {
+    #transfer-money {
+        height: 100%;
+        position: absolute;
+        width: 100%;
+        .wrapper {
+            padding: 98px 20px 20px 20px;
+            height: 100%;
+            overflow: scroll;
+            .app-transfer-form {
+                display: inline-block;
+                margin-right: 10px;
+                float: left;
+            }
+            .app-recent-transactions-dashboard {
+                display: inline-block;
+                margin-left: 10px;
+                width: calc(100% - 299px);
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 1150px) {
+    #transfer-money {
+        .wrapper {
+            width: 1150px;
+            margin: 0 auto;
+        }
+    }
+}

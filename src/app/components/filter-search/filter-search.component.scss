@@ -1,0 +1,131 @@
+@import '../../../assets/scss/styles.scss';
+
+.filter-functionality {
+    div {
+        position: relative;
+        input {
+            &[name="search"] {
+                width: 100%;
+                font-size: 14px;
+                padding: 5px 30px 5px 5px;
+                border: 0;
+                border-bottom: 2px solid $light-stone-grey;
+            }
+        }
+        .cancel-button {
+            position: absolute;
+            width: 30px;
+            right: 0;
+            top: -5px;
+            cursor: pointer;
+        }
+    }
+    p {
+        font-weight: bold;
+        font-size: 10px;
+    }
+    .buttons-wrapper {
+        display: block;
+
+        .button {
+            position: relative;
+            display: inline-block;
+            text-align: center;
+            outline: none;
+            border-radius: 0;
+            border-right: 0;
+            text-transform: uppercase;
+            cursor: pointer;
+            background-color: #fff;
+            font-size: 10px;
+
+            &.active {
+                background-color: $pumpkin-orange;
+                color: #fff;
+                
+                div {
+                    border-left: 1px solid $pumpkin-orange;
+                    border-right: 1px solid $pumpkin-orange;
+                    border-color: $pumpkin-orange;
+                    p {
+                        span {
+                            &.triangle-up {
+                                border-bottom: 8px solid #fff;
+                              }
+                            &.triangle-down {
+                                border-top: 8px solid #fff;
+                            }
+                        }
+                    }
+                }
+            }
+
+            &[name="date"] {
+                width: 29%;
+                span {
+                    margin-left: 1px;
+                }
+            }
+            &[name="amount"] {
+                width: 29%;
+                div {
+                    border-right: 1px solid grey;
+                }
+            }
+            &[name="beneficiary"] {
+                width: 42%;
+            }
+
+            div {
+                padding: 10px 0;
+                border-width: 1px 0 1px 1px;
+                border-style: solid;
+                border-color: grey;
+
+                p {
+                    margin: 0;
+                    span {
+                        width: 0;
+                        height: 0;
+                        border-left: 4px solid transparent;
+                        border-right: 4px solid transparent;
+                        top: 40%;
+                        display: inline-block;
+                        &.triangle-up {
+                            border-bottom: 8px solid grey;
+                          }
+                        &.triangle-down {
+                            border-top: 8px solid grey;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .filter-functionality {
+        p {
+            font-size: 14px;
+        }
+        .buttons-wrapper {
+            .button {
+                div {
+                    p {
+                        span {
+                            border-left-width: 5px;
+                            border-right-width: 5px;
+                            &.triangle-up {
+                                border-bottom-width: 10px;
+                              }
+                            &.triangle-down {
+                                border-top-width: 10px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,87 @@
+@import '../../../assets/scss/styles.scss';
+
+.make-transfer-form {
+    background: #fff;
+    .title-wrapper {
+        @include titleWrapper;
+        img {
+            @include titleIcon;
+        }
+        h2 {
+            @include title;
+        }
+    }
+    .contents-wrapper {
+        padding: 15px;
+        div {
+            padding: 10px 0;
+            position: relative;
+            label {
+                text-transform: uppercase;
+                font-weight: bold;
+                width: 100%;
+                font-size: 14px;
+            }
+            input {
+                border: 0;
+                border-bottom: 2px solid $light-stone-grey;
+                padding: 5px 0;
+                width: 100%;
+                position: relative;
+                font-size: 14px;
+                cursor: pointer;
+                &:disabled {
+                    cursor: not-allowed;
+                }
+                &[name="amount"] {
+                    padding-left: 10px;
+                }
+            }
+            span {
+                position: absolute;
+                left: 0;
+                font-size: 14px;
+                bottom: 16px;
+                color: #757575;
+                &.errorMessage {
+                    color: red;
+                    font-weight: bold;
+                    bottom: -15px;
+                }
+            }
+        }
+        .button-wrapper {
+            text-align: center;
+            button {
+                background-color: $pumpkin-orange;
+                text-transform: uppercase;
+                color: #fff;
+                padding: 10px 50px;
+                font-size: 12px;
+                margin-top: 15px;
+                border: none;
+                cursor: pointer;
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .make-transfer-form {
+        min-width: 250px;
+        max-width: 295px;
+        display: inline-block;
+        .title-wrapper {
+            h2 {
+                font-size: 18px;
+            }
+        }
+        .contents-wrapper {
+            .button-wrapper {
+                button {
+                    font-size: 14px;
+                }
+            }
+        }
+    }
+}
