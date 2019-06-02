@@ -45,7 +45,7 @@ export class RecentTransactionsComponent implements OnChanges {
         
     }
 
-    clearSearchAndReset = () => {
+    clearSearchAndReset = (e) => {
         this.searchKeywords = '';
         // console.log('REACHED!!!!');
     }

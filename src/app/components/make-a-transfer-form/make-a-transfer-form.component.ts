@@ -10,7 +10,7 @@ import { FormControl, FormGroup, FormBuilder, Validators } from '@angular/forms'
 
 export class MakeATransferFormComponent implements OnChanges {
 
-  private makeATransferForm: FormGroup;
+  makeATransferForm: FormGroup;
 
   @Output() makeTransferEvent = new EventEmitter<Transfer>();
   @Input() balance : number;
