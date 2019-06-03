@@ -2,7 +2,7 @@
     background-image: url('../../../assets/img/background.jpg');
     background-position: center;
     background-size: cover;
-    // min-height: calc(100% - 78px);
+    // min-height: calc(100% - 65px);
     height: initial;
     min-height: initial;
 }
@@ -10,10 +10,11 @@
 @media screen and (min-width: 768px) {
     #transfer-money {
         height: 100%;
+        // height: calc(100% - 69px);
         position: absolute;
         width: 100%;
         .wrapper {
-            padding: 98px 20px 20px 20px;
+            padding: 115px 20px 20px 20px;
             height: 100%;
             overflow: scroll;
             .app-transfer-form {

@@ -5,6 +5,7 @@ nav {
     padding: 15px 0;
     width: 100%;
     background: #fff;
+    line-height: 1em;
     img {
         width: 175px;
         margin-left: 20px;
@@ -12,12 +13,23 @@ nav {
 }
 
 @media screen and (min-width: 768px) {
-    padding: 20px 0;
     nav {
+        padding: 20px 0;
         position: fixed;
         z-index: 9999;
-        img {
-            width: 251px;
+        div {
+            img {
+                width: 251px;
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 1250px) {
+    nav {
+        div {
+            width: 1250px;
+            margin: 0 auto;
         }
     }
 }
