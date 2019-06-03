@@ -1,11 +1,11 @@
 @import '../../../assets/scss/styles.scss';
 
 .filter-functionality {
-    div {
+    .search-wrapper {
         position: relative;
         input {
             &[name="search"] {
-                font-size: 300;
+                font-weight: 300;
                 width: 100%;
                 font-size: 14px;
                 padding: 5px 30px 5px 5px;
@@ -109,10 +109,49 @@
 
 @media screen and (min-width: 768px) {
     .filter-functionality {
-        p {
+        .sort {
             font-size: 14px;
         }
         .buttons-wrapper {
+            .button {
+                div {
+                    p {
+                        span {
+                            border-left-width: 5px;
+                            border-right-width: 5px;
+                            &.triangle-up {
+                                border-bottom-width: 10px;
+                              }
+                            &.triangle-down {
+                                border-top-width: 10px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 1250px) {
+    .filter-functionality {
+        .search-wrapper {
+            width: 400px;
+            display: inline-block;
+            input {
+                &[name="search"] {
+                    font-size: 16px;
+                }
+            }
+        }
+        .sort {
+            display: inline-block;
+            font-size: 14px;
+            margin: 0 10px;
+        }
+        .buttons-wrapper {
+            display: inline-block;
+            width: calc(100% - 469px);
             .button {
                 div {
                     p {

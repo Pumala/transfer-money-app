@@ -66,6 +66,7 @@
                     }
                     &.amount {
                         min-width: 60px;
+                        text-align: right;
                         span {
                             font-weight: 500;
                             font-size: 12px;
@@ -97,6 +98,57 @@
                             }
                         }
                         &.img {
+                            img {
+                                height: 50px;
+                                width: 50px;
+                            }
+                        }
+                        &.merchant {
+                            div {
+                                h4 {
+                                    margin: 0;
+                                    font-size: 16px;
+                                }
+                                p {
+                                    margin: 0;
+                                    font-size: 14px;
+                                }
+                            }
+                        }
+                        &.amount {
+                            min-width: 80px;
+                            span {
+                                font-size: 16px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 1250px) {
+    .recent-transactions {
+        display: inline-block;
+        width: 100%;
+        .title {
+            h2 {
+                font-size: 18px;
+            }
+        }
+        .contents-wrapper {
+            table {
+                tr {
+                    td {
+                        &.date {
+                            width: 113px;
+                            span {
+                                font-size: 16px;
+                            }
+                        }
+                        &.img {
+                            width: 113px;
                             img {
                                 height: 50px;
                                 width: 50px;

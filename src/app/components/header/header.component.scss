@@ -2,18 +2,22 @@
 
 nav {
     border-bottom: 5px solid $pumpkin-orange;
-    padding: 20px 0;
+    padding: 15px 0;
     width: 100%;
     background: #fff;
     img {
-        width: 251px;
+        width: 175px;
         margin-left: 20px;
     }
 }
 
 @media screen and (min-width: 768px) {
+    padding: 20px 0;
     nav {
         position: fixed;
         z-index: 9999;
+        img {
+            width: 251px;
+        }
     }
 }

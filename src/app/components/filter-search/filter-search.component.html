@@ -1,5 +1,5 @@
 <div class="filter-functionality">
-    <div>
+    <div class="search-wrapper">
         <input name="search" type="text" placeholder="Search by typing..." [(ngModel)]="searchKeywords" (ngModelChange)="updateSearchKeywords($event)">
         <img *ngIf="searchKeywords && searchKeywords.length > 0" (click)="clearSearchAndReset()" class="cancel-button" src="../../../assets/icons/cancel.png" alt="cancel reset search button">
     </div>
