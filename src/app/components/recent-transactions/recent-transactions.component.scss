@@ -39,6 +39,7 @@
                         min-width: 40px;
                         span {
                             font-size: 12px;
+                            font-weight: 200;
                         }
                     }
                     &.img {
@@ -54,17 +55,19 @@
                             h4 {
                                 margin: 0;
                                 font-size: 14px;
+                                font-weight: 400;
                             }
                             p {
                                 margin: 0;
                                 font-size: 12px;
+                                font-weight: 300;
                             }
                         }
                     }
                     &.amount {
                         min-width: 60px;
                         span {
-                            font-weight: bold;
+                            font-weight: 500;
                             font-size: 12px;
                         }
                     }
