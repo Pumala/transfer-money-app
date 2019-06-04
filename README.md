@@ -37,7 +37,6 @@ Create a responsive transfer money application
 
     ##### Example Below:
     ![step3](src/assets/img/app-img/step3.png)
-    
     *If you get an error message, then you may not have node or npm (or both) installed on your computer. Please visit https://www.npmjs.com/get-npm to download them.*
 
 4. Run the application
@@ -118,3 +117,7 @@ Users can make money transfers, which are then added to a list of recent transac
 ####  12. Return No Results when filter search engine matches nothing
 
 ![home](src/assets/img/app-img/no-results.png)
+
+####  13. Exceeds balance error
+
+![home](src/assets/img/app-img/exceeds-balance.png)
