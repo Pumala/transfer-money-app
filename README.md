@@ -37,6 +37,7 @@ Create a responsive transfer money application
 
     ##### Example Below:
     ![step3](src/assets/img/app-img/step3.png)
+    
     *If you get an error message, then you may not have node or npm (or both) installed on your computer. Please visit https://www.npmjs.com/get-npm to download them.*
 
 4. Run the application
