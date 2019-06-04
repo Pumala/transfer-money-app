@@ -1,4 +1,4 @@
-import { Component, OnChanges, Input, SimpleChanges, SimpleChange } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import axios, { AxiosResponse } from 'axios';
 import { Transaction } from '../../models/Transaction';
 import { SortDirectionTracker } from '../../models/SortDirectionTracker';
@@ -11,61 +11,41 @@ import { Globals } from '../../globals';
   styleUrls: ['./recent-transactions.component.scss']
 })
 
-export class RecentTransactionsComponent implements OnChanges {
+export class RecentTransactionsComponent {
 
     @Input() transactions : Transaction[];
-
     @Input() searchKeywords : string;
-    sortByAscDate : boolean;
-    sortByAscBeneficiary : boolean = null;
-    sortByAscAmount : boolean = null;
-    // could be 1 / 4 values => ascDate, descDate, beneficary, amount
-    sortBy : string; 
+
+    // could be 1 of 3 values => transactionDate, merchant, or amount once user selects
+    sortBy : string = ''; 
     // ASC or DESC 
     direction : string;
 
-    constructor(private globals : Globals) {
-    // this.searchKeywords = '';
-        this.sortBy = '';
-        this.sortByAscDate = null,
-        this.sortByAscBeneficiary = null,
-        this.sortByAscAmount = null;
-    
-    }
+    constructor(private globals : Globals) {}
 
-    ngOnChanges(changes : SimpleChanges) {
-        // console.log('ANY CHANGES...', changes);
-        const item : SimpleChange = changes.item;
-
-        if (item) {
-            // console.log('new changes happening....', item);
-            // console.log('prev val', item.previousValue);
-            // console.log('curr val', item.currentValue);
-        }
-        
-    }
-
-    clearSearchAndReset = (e) => {
+    clearSearchAndResetResults = (e) : void => {
         this.searchKeywords = '';
-        // console.log('REACHED!!!!');
     }
 
-    updateSearchKeywords = (value) => {
+    updateSearchKeywords = (value) : void => {
         
         this.searchKeywords = value;
     }
 
-    receiveSearchKeywords = (search : string) => {
+    receiveSearchKeywords = (search : string) : void => {
+
         this.searchKeywords = search;
+
     }
 
-    receiveSortDirection = ({ sortType, direction }) => {
+    receiveSortDirection = ({ sortType, direction }) : void => {
 
         this.sortBy = sortType;
         this.direction = direction;
+
     }
 
-    getBorderColor = (transaction) => {
+    getBorderColor = (transaction) : object => {
 
         if (transaction === -1) {
             return {

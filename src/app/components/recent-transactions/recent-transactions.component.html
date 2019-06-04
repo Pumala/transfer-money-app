@@ -5,7 +5,7 @@
     </div>
     <div class="contents-wrapper">
         <app-filter-search (sortDirectionEvent)="receiveSortDirection($event)" (searchKeywordsEvent)="receiveSearchKeywords($event)"
-            (clearSearchAndResetEvent)="clearSearchAndReset($event)"></app-filter-search>
+            (clearSearchAndResetEvent)="clearSearchAndResetResults($event)"></app-filter-search>
         <table>
             <tbody>
                 <tr *ngFor="let transaction of transactions | transactionsFilterAndSort : searchKeywords : sortBy : direction " [ngClass]="getBorderColor(transaction)">

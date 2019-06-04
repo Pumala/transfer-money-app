@@ -18,11 +18,12 @@ export class TransferMoneyDashboardComponent implements OnInit {
   updatedBalance: number;
   loadingTransactionsError : boolean = false;
 
-  constructor(private globals : Globals, private transactionsService : TransactionsService) {}
+  constructor(private globals : Globals, private transactionsService : TransactionsService) {
+  }
 
   ngOnInit() {
 
-    this.updatedBalance = 5876.76;
+    this.updatedBalance = this.globals.initialBalance;
 
     this.transactionsService.getTransactions()
       .then(transactions => {

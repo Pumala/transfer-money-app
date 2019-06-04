@@ -1,12 +1,16 @@
 import { Pipe, PipeTransform } from '@angular/core';
 import { Transaction } from '../models/Transaction';
-import { SortValues } from '../models/SortValues';
+import { Globals } from '../globals';
 
 @Pipe({ name: 'transactionsFilterAndSort' })
 export class TransactionsFilterAndSortPipe implements PipeTransform {
+
+  constructor(private globals : Globals) {}
+
   transform(transactions: Transaction[] = [], searchText: string = '', sortBy: string = null, direction: string = null): any[] {
 
     if (transactions.length < 1) {
+      // -1 represents there are no transactions
       return [-1];
     }
 
@@ -22,7 +26,7 @@ export class TransactionsFilterAndSortPipe implements PipeTransform {
         let a: any;
         let b: any;
 
-        if (direction === 'DESC') {
+        if (direction === this.globals.desc) {
 
           a = aTran[sortBy];
           b = bTran[sortBy];

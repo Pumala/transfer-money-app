@@ -1,4 +1,4 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, Output, EventEmitter } from '@angular/core';
 import { SortDirectionTracker } from '../../models/SortDirectionTracker';
 import { Globals } from '../../globals';
 
@@ -8,37 +8,39 @@ import { Globals } from '../../globals';
     styleUrls: ['./filter-search.component.scss']
 })
 
-export class FilterSearchComponent implements OnInit {
+export class FilterSearchComponent {
 
-    searchKeywords: string = "";
     @Output() searchKeywordsEvent = new EventEmitter<string>();
     @Output() sortDirectionEvent = new EventEmitter<object>();
     @Output() clearSearchAndResetEvent = new EventEmitter<boolean>();
 
-    sortDirectionTracker : SortDirectionTracker;
     sortType : string;
 
-    constructor(private globals : Globals) {
-        this.sortDirectionTracker = {
-            transactionDate: this.globals.asc,
-            merchant: this.globals.asc,
-            amount: this.globals.asc
-        }
+    searchKeywords: string = "";
+
+    sortDirectionTracker : SortDirectionTracker = this.sortDirectionTracker = {
+        transactionDate: this.globals.asc,
+        merchant: this.globals.asc,
+        amount: this.globals.asc
     }
 
-    ngOnInit() { }
+    constructor(private globals : Globals) {
+    }
 
-    clearSearchAndReset = () => {
+    clearSearchAndReset = () : void => {
+
         this.searchKeywords = '';
         this.clearSearchAndResetEvent.emit(true);
+
     }
 
-    updateSearchKeywords = (e: string) => {
+    updateSearchKeywords = (e: string) : void => {
+
         this.searchKeywordsEvent.emit(e);
 
     }
 
-    changeSortAndDirection = (sortType, currDirection) => {
+    changeSortAndDirection = (sortType, currDirection) : void => {
 
         this.sortType = sortType;
         let direction : string;
@@ -55,14 +57,14 @@ export class FilterSearchComponent implements OnInit {
         this.sortDirectionEvent.emit({ sortType, direction });
     }
 
-    updateArrowDirection = (sortName) => {
+    updateArrowDirection = (sortName) : object => {
         return { 
             'triangle-down' : this.sortDirectionTracker[sortName] === this.globals.desc, 
             'triangle-up': this.sortDirectionTracker[sortName] === this.globals.asc 
         }
     }
 
-    checkIfActive = (sortName) => {
+    checkIfActive = (sortName) : object => {
         return {
             'active' : this.sortType === sortName
         }

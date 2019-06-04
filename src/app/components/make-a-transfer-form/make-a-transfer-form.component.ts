@@ -1,7 +1,7 @@
 import { Component, Output, EventEmitter, Input, OnChanges, SimpleChanges, SimpleChange  } from '@angular/core';
 import { Transfer } from '../../models/Transfer';
 import { FormControl, FormGroup, FormBuilder, Validators } from '@angular/forms';
-
+import { Globals } from '../../globals';
 @Component({
   selector: 'app-transfer-form',
   templateUrl: './make-a-transfer-form.component.html',
@@ -21,7 +21,7 @@ export class MakeATransferFormComponent implements OnChanges {
   balanceLimit : number = -500;
   minTransferAmount : number = 0.01;
 
-  constructor(private formBuilder: FormBuilder) { }  
+  constructor(private formBuilder: FormBuilder, private globals: Globals) { }  
 
   ngOnChanges(changes : SimpleChanges) {
 
@@ -37,19 +37,18 @@ export class MakeATransferFormComponent implements OnChanges {
   // convenience getter for easy access to form fields
   get f() { return this.makeATransferForm.controls; }
 
-  onSubmit = () => {
+  onSubmit = () : void => {
     this.validateTransfer();
   }
 
-
-  validateTransfer = () => {
+  validateTransfer = () : void => {
 
     if (this.makeATransferForm.invalid) {
       if (this.f.amount.touched && this.f.amount.errors) {
-        this.errorMessage = 'Please enter a valid amount.';
+        this.errorMessage = this.globals.invalidAmountErrMsg;
       } else {
         this.hasEmptyFields = true;
-        this.errorMessage = 'Please fill in all the required fields.';
+        this.errorMessage = this.globals.missingFieldsErrMsg;
       }
 
     } else {
@@ -66,9 +65,9 @@ export class MakeATransferFormComponent implements OnChanges {
 
   checkTransactionIsValid = () : string => {
     if (this.makeATransferForm.value.amount < this.minTransferAmount) {
-      return 'Minimum transfer amount of 0.01.';
+      return this.globals.minAmountErrMsg;
     } else if (this.balance - this.makeATransferForm.value.amount < this.balanceLimit) {
-      return 'Exceeds balance limit of -$500.';
+      return this.globals.exceedsBalanceErrMsg;
     } else {
       return '';
     }
