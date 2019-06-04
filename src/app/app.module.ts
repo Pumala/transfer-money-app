@@ -9,6 +9,7 @@ import { HeaderComponent } from '../app/components/header/header.component';
 import { MakeATransferFormComponent } from '../app/components/make-a-transfer-form/make-a-transfer-form.component';
 import { RecentTransactionsComponent } from '../app/components/recent-transactions/recent-transactions.component';
 import { FilterSearchComponent } from '../app/components/filter-search/filter-search.component';
+import { PageNotFoundComponent } from '../app/components/page-not-found/page-not-found.component';
 import { AppRoutingModule } from './app-routing.module';
 
 import { TransactionsFilterAndSortPipe } from './pipes/transactions-filter-and-sort.pipe';
@@ -23,6 +24,7 @@ import { Globals } from './globals';
     HeaderComponent,
     MakeATransferFormComponent,
     RecentTransactionsComponent,
+    PageNotFoundComponent,
     FilterSearchComponent,
     TransactionsFilterAndSortPipe,
   ],

@@ -82,6 +82,9 @@
         display: inline-block;
         width: 100%;
         .title {
+            img {
+                left: 12px;
+            }
             h2 {
                 font-size: 18px;
             }
@@ -133,7 +136,7 @@
         width: 100%;
         .title {
             h2 {
-                font-size: 18px;
+                font-size: 20px;
             }
         }
         .contents-wrapper {

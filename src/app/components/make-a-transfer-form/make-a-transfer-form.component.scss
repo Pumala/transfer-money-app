@@ -76,8 +76,11 @@
         max-width: 278.141px;
         display: inline-block;
         .title-wrapper {
+            img {
+                left: 12px;
+            }
             h2 {
-                font-size: 18px;
+                font-size: 20px;
             }
         }
         .contents-wrapper {
