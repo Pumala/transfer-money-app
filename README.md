@@ -51,7 +51,7 @@ Create a responsive transfer money application
 * HTML
 * CSS / SASS
 * Javascript
-* Angular 7 (this branch has been upgraded to use Angular 7 instead of Angular 6 as seen in the master branch)
+* Angular 7
 
 ### Languages / Frameworks / Technologies used Explanation:
 
