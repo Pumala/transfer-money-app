@@ -14,8 +14,6 @@ import { AppRoutingModule } from './app-routing.module';
 
 import { TransactionsFilterAndSortPipe } from './pipes/transactions-filter-and-sort.pipe';
 
-import { TransactionsService } from './services/transactions/transactions.service';
-
 import { Globals } from './globals';
 @NgModule({
   declarations: [
@@ -35,7 +33,6 @@ import { Globals } from './globals';
     ReactiveFormsModule
   ],
   providers: [
-    TransactionsService,
     Globals
   ],
   bootstrap: [AppComponent]

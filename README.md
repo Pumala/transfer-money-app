@@ -51,17 +51,13 @@ Create a responsive transfer money application
 * HTML
 * CSS / SASS
 * Javascript
-* Angular 6
+* Angular 7
 
 ### Languages / Frameworks / Technologies used Explanation:
 
-I built this app in Angular 6 because Angular 1.5.x is a version that I don't believe many companies are using. For example, I do not see anyone currently working on a version older than Angular 6 at my current workplace.
+I researched what new changes came with the release of Angular 7. Some of the new features includes CLI prompts, updates to its Angular Material and compononent dev kit (CDK) as seen in its new DragDropModule and ScrollingModule. There are also improvements in performance. To implement this change in performance, nothing is needed from the developer as the changes have already been taken care of in the newest changes in the polyfills.ts file.
 
-So, why not use Angular 7 or even its latest version release of 8?
-
-Actually, I could have gone with Angular 7. Honestly, with each new release since Angular 2 there hasn't been much difference in new features. Ultimately, the reason I didn't choose to build this app in Angular 7 is because I haven't written in Angular 7 yet, and I felt more comfortable tackling this app challenge in a version of Angular I have used before.
-
-The same can also be said for why I didn't go with Angular 8. It is still new, having only been released about a week ago.
+All in all, there doesn't seem to be many changes between Angular 6 and Angular 7 where I would need to spend countless hours upgrading. I only needed to change the angular and typescript versions, which took a few minutes.  
 
 ## Description
 
