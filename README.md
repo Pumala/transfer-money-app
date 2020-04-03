@@ -8,7 +8,7 @@ Create a responsive transfer money application
 
 ### Live Demo:
 
-[Transfer Money App](transfer-money-app.surge.sh)
+[Transfer Money App](http://transfer-money-app.surge.sh/)
 
 ### Getting the App to Run 
 
